@@ -2,7 +2,7 @@
 
 const yargs = require('yargs/yargs')
 const {hideBin} = require('yargs/helpers')
-const createEntity = require('./entity_create')
+const createEntity = require('./commands/entity_create')
 
 const argv = yargs(hideBin(process.argv)).argv;
 
