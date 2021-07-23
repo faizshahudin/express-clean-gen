@@ -1,9 +1,11 @@
 {
   "name": "@faizshahudin/express-clean-gen",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Node.js cli for generate Express with Clean Architecture template",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "express-clean-gen": "index.js"
+  },
   "author": "Faiz Shahudin",
   "license": "MIT",
   "repository": "faizshahudin/express-clean-gen",
