@@ -1,14 +1,12 @@
 const fs = require("fs");
 const path = require("path");
-const readline = require("readline");
 
-    const rootDir = process.cwd();
-    const templateDir = rootDir + '/assets';
-    const srcDir = rootDir + '/src'
-    const entitiesDir = rootDir + "/src/entities";
-    let rl
+const rootDir = process.cwd();
+const templateDir = path.resolve(__dirname + '/../assets');
+const srcDir = rootDir + '/src'
+const entitiesDir = rootDir + "/src/entities";
 
-module.exports = function(dirName) {
+module.exports = function(dirName, rl) {
     let entityDir = path.resolve(entitiesDir, dirName);
 
     if (!fs.existsSync(srcDir)) {
@@ -19,10 +17,7 @@ module.exports = function(dirName) {
         fs.mkdirSync(entitiesDir);
     }
 
-    rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
+
 
     if (!fs.existsSync(entityDir)) {
         generateEntityModule(entityDir,dirName);
@@ -45,12 +40,6 @@ module.exports = function(dirName) {
             }
         );
     }
-
-
-    rl.on("close", function () {
-        console.log("done.");
-        process.exit(0);
-    });
 }
 
 function generateEntityModule(entityDir,dirName) {
