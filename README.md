@@ -10,5 +10,5 @@ npm i -D @faizshahudin/express-clean-gen
 
 ## Usage
 ```bash
-express-clean-gen entity:create --name 
+express-clean-gen entity:create --name Product
 ```
